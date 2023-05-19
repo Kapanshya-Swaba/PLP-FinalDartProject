@@ -24,7 +24,43 @@ class _ProductsState extends State<Products> {
       "price":"10000",
 
 
-    }
+    },
+
+    {
+      "name":"Phone Stand",
+      "picture":"assets/Products/Stand.jpg",
+      "old_price":"90",
+      "price":"45",     
+    },
+    {
+      "name":"Patch Panel",
+      "picture":"assets/Products/Patch Panel.jpg",
+      "old_price":"3000",
+      "price":"2500",
+    },
+    {
+      "name":"Seagate Hard Drive 4TeraByte",
+      "picture":"assets/Products/HardDrive4TB.jpg",
+      "old_price":"4000",
+      "price":"3500",
+    },
+    {
+      "name":"Logic Combo.",
+      "picture":"assets/Products/Keyboard+Mouse.jpg",
+      "old_price":"1500",
+      "price":"1100",
+    },
+    {
+      "name":"Ryzen CPU",
+      "picture":"assets/Products/CPU.jpg",
+      "old_price":"3800",
+      "price":"2200",
+    },
+
+
+
+
+
   ];
   @override
   Widget build(BuildContext context) {
@@ -82,7 +118,7 @@ class Single_Product extends StatelessWidget {
                 leading: Text(product_Name,
                   style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
-                title: Text("\$$product_Price",style: const TextStyle(color: Colors.red,fontWeight: FontWeight.w800),
+                title: Text("\$$product_Price",style: const TextStyle(color: Colors.green,fontWeight: FontWeight.w800),
                 ),
                 subtitle: Text("\$$product_Old_price",style: const TextStyle(color: Colors.red,fontWeight: FontWeight.w800, decoration: TextDecoration.lineThrough),
               ),

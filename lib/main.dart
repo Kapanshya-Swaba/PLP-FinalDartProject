@@ -4,6 +4,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 // Import Horizontal_ListView
 import 'package:techcloud_store/Components/Horizontal_ListView.dart';
 import 'package:techcloud_store/Components/Products.dart';
+import 'package:techcloud_store/Components/Pages/Cart.dart';
 
 void main() {
   runApp(
@@ -24,6 +25,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   Widget _buildImageCarousel() {
     List<String> imagePaths = [
+      "assets/images/img (1).jpg",
       "assets/images/img (2).jpg",
       "assets/images/img (3).jpg",
       "assets/images/img (4).jpg",
@@ -33,8 +35,6 @@ class _HomePageState extends State<HomePage> {
       "assets/images/img (8).jpg",
       "assets/images/img (9).jpg",
       "assets/images/img (10).jpg",
-
-      //
     ];
 
     return SizedBox(
@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage> {
           );
         },
         options: CarouselOptions(
-          autoPlay: true,
+          autoPlay: false,
           autoPlayCurve: Curves.fastOutSlowIn,
           autoPlayAnimationDuration: const Duration(milliseconds: 1000),
         ),
@@ -62,7 +62,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         elevation: 0.1,
         backgroundColor: Colors.blue,
-        title: const Text("TechCloud_Store"),
+        title: const Text("TechCloud Store"),
         actions: [
           IconButton(
             onPressed: () {},
@@ -70,7 +70,9 @@ class _HomePageState extends State<HomePage> {
             color: Colors.white,
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const Cart()));
+            },
             icon: const Icon(Icons.shopping_cart_sharp),
             color: Colors.white,
           ),
@@ -80,8 +82,8 @@ class _HomePageState extends State<HomePage> {
         child: ListView(
           children: [
             UserAccountsDrawerHeader(
-              accountName: const Text('Ks'),
-              accountEmail: const Text("kff@gmail.com"),
+              accountName: const Text('User1',  style: TextStyle(color: Colors.black),),
+              accountEmail: const Text("customer@gmail.com",  style: TextStyle(color: Colors.black),),
               currentAccountPicture: GestureDetector(
                 child: const CircleAvatar(
                   backgroundColor: Colors.grey,
@@ -94,9 +96,48 @@ class _HomePageState extends State<HomePage> {
               onTap: () {},
               child: const ListTile(
                 title: Text("Home Page"),
-                leading: Icon(Icons.home),
+                leading: Icon(Icons.home,color: Colors.red,),
               ),
             ),
+            InkWell(
+              onTap: (){},
+              child: const ListTile(
+                title: Text("My Account"),
+                leading:Icon(Icons.person,color: Colors.red),
+              ),
+            ),
+            InkWell(
+              onTap: (){},
+                child: const ListTile(
+                  title: Text("My Orders"),
+                  leading: Icon(Icons.shopping_bag_rounded,color: Colors.pink,),
+                ),
+               ),
+               InkWell(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const Cart()));
+                },
+                child:const ListTile(
+                  title: Text("Shopping Cart"),
+                  leading: Icon(Icons.shopping_cart,color: Colors.red,),
+                ),
+               ),
+               InkWell(
+                onTap: (){},
+                child: const ListTile(
+                  title: Text("Favourites"),
+                  leading: Icon(Icons.favorite,color: Colors.red,),
+                ),
+               ),
+               InkWell(
+                onTap: (){},
+                child:const ListTile(
+                  title: Text("Settings"),
+                  leading: Icon(Icons.settings,color: Colors.red,),
+                ),
+               ),
+               
+               
             InkWell(
               onTap: () {},
               child: const ListTile(
@@ -115,7 +156,7 @@ class _HomePageState extends State<HomePage> {
             child: Text('Categories'),
           ),
           // Horizontal list view begins here
-          HorizontalList(),
+          const HorizontalList(),
 
           const Padding(
             padding: EdgeInsets.all(25.0),

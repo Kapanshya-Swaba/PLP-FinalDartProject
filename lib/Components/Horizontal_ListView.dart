@@ -6,13 +6,14 @@ class HorizontalList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 100,
+      height: 150,
+      width: 200,
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: const <Widget>[
           Category(
-            image_location: 'assets/Products/Laptop.jpg',
-            image_caption: 'Laptop',
+            image_location: 'assets/Products/Monitor.jpg',
+            image_caption: 'Monitor',
           ),
 
           Category(
@@ -31,9 +32,19 @@ class HorizontalList extends StatelessWidget {
           ),
 
           Category(
-            image_location: 'assets/Products/Mac.jpg',
+            image_location: 'assets/Products/Mac-Book (1).jpg',
             image_caption: 'Mac-Book',
           ),
+
+          Category(
+            image_location:'assets/Products/MotherBoard.png' ,
+            image_caption:"Mother Board"
+            ),
+          Category(
+            image_location: 'assets/Products/Ram.jpg',
+            image_caption: "8GB Ram")
+
+    
 
 
         ],

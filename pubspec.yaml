@@ -1,4 +1,4 @@
-name: tech_cloud2
+name: techcloud_store
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -36,6 +36,10 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  carousel_slider: ^4.2.1
+  carousel_pro: ^1.0.0
+
+
 
 dev_dependencies:
   flutter_test:
@@ -63,6 +67,33 @@ flutter:
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
+  assets:
+  - assets/images/img (1).jpg
+  - assets/images/img (2).jpg
+  - assets/images/img (3).jpg
+  - assets/images/img (4).jpg
+  - assets/images/img (5).jpg
+  - assets/images/img (6).jpg
+  - assets/images/img (7).jpg
+  - assets/images/img (8).jpg
+  - assets/images/img (9).jpg
+  - assets/images/img (10).jpg
+
+  - assets/Products/Monitor.jpg
+  - assets/Products/MotherBoard.png
+  - assets/Products/GraphicsCard.jpg
+  - assets/Products/HardDrive.jpg
+  - assets/Products/Mac.jpg
+  - assets/Products/Keyboard.jpg
+  - assets/Products/Patch Panel.jpg
+  - assets/Products/Stand.jpg
+  - assets/Products/HardDrive4TB.jpg
+  - assets/Products/CPU.jpg
+  - assets/Products/Keyboard+Mouse.jpg
+  - assets/Products/Mac-Book (1).jpg
+  - assets/Products/MotherBoard.jpg
+  - assets/Products/Ram.jpg
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

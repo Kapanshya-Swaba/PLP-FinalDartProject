@@ -59,6 +59,7 @@ class _Cart_productsState extends State<Cart_products> {
           cart_product_price: Products_on_the_cart[index]["price"],
           cart_product_picture: Products_on_the_cart[index]["picture"],
 
+
         );
       });
   }
@@ -86,32 +87,59 @@ class Single_cart_product extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Card(
       child: ListTile(
+        // ======Leading Section ========
+         leading: Image.asset(cart_product_picture,
+          width: 100.0,
+          height: 100.0,
+        ),
+        // ==== Title Section ====
         title: Text(cart_product_name),
+
+        // === Subtitle ==========
         subtitle: Column(
           children: [
             //======= Size of product =======
             Row(
               children: <Widget> [
              const Padding(
-               padding: EdgeInsets.all(8.0),
+               padding: EdgeInsets.all(2.0),
                child:Text("Size: "),
              ),
                 Padding(
                   padding: const EdgeInsets.all(4.0),
-                  child:Text(cart_product_Size),
+                  child:Text(cart_product_Size, style: const TextStyle(color:Colors.red),),
                 ),
+                // ======== Product Color =======
                 const Padding(padding: EdgeInsets.fromLTRB(20.0, 8.0, 8.0, 8.0),
                 child: Text("Color"),
                 ),
                 Padding(padding: EdgeInsets.all(4.0),
-                child: Text(cart_product_color),),
+                child: Text(cart_product_color,style: const TextStyle(color:Colors.red ),),),
 
 
               ],
-            )
+            ),
+            // ===== Product Price ===
+            Container(
+              alignment: Alignment.topLeft,
+              child:  Text("\$${cart_product_price}", style: TextStyle(fontSize: 16.0,fontWeight: FontWeight.bold,
+              color:Colors.red),
+              ),
+            ),
+          ],
+        ),
+        trailing: Column(
+          children: <Widget>[
+            IconButton(icon: Icon(Icons.arrow_drop_up),
+              onPressed: () {  },),
+            Text("$cart_product_Quantity"),
+            IconButton(icon: Icon(Icons.arrow_drop_down),
+              onPressed: () {  },),
+
           ],
         ),
       ),
     );
   }
 }
+

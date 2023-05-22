@@ -18,7 +18,7 @@ class CartState extends State<Cart> {
         title: const Text("Shopping Cart"),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: (){},
             icon: const Icon(Icons.search),
             color: Colors.white,
           ),
@@ -39,8 +39,9 @@ class CartState extends State<Cart> {
           Expanded(
               child: MaterialButton(
                 onPressed: (){},
-                color: Colors.red,
+
               child: const Text("Check out", style: TextStyle(color: Colors.white),),
+              color:Colors.red,
               ),
           )
         ],

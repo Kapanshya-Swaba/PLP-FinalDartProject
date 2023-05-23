@@ -71,7 +71,8 @@ class _HomePageState extends State<HomePage> {
           ),
           IconButton(
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => const Cart()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const Cart()));
             },
             icon: const Icon(Icons.shopping_cart_sharp),
             color: Colors.white,
@@ -82,8 +83,14 @@ class _HomePageState extends State<HomePage> {
         child: ListView(
           children: [
             UserAccountsDrawerHeader(
-              accountName: const Text('User1',  style: TextStyle(color: Colors.black),),
-              accountEmail: const Text("customer@gmail.com",  style: TextStyle(color: Colors.black),),
+              accountName: const Text(
+                'User1',
+                style: TextStyle(color: Colors.black),
+              ),
+              accountEmail: const Text(
+                "customer@gmail.com",
+                style: TextStyle(color: Colors.black),
+              ),
               currentAccountPicture: GestureDetector(
                 child: const CircleAvatar(
                   backgroundColor: Colors.grey,
@@ -96,48 +103,62 @@ class _HomePageState extends State<HomePage> {
               onTap: () {},
               child: const ListTile(
                 title: Text("Home Page"),
-                leading: Icon(Icons.home,color: Colors.red,),
+                leading: Icon(
+                  Icons.home,
+                  color: Colors.red,
+                ),
               ),
             ),
             InkWell(
-              onTap: (){},
+              onTap: () {},
               child: const ListTile(
                 title: Text("My Account"),
-                leading:Icon(Icons.person,color: Colors.red),
+                leading: Icon(Icons.person, color: Colors.red),
               ),
             ),
             InkWell(
-              onTap: (){},
-                child: const ListTile(
-                  title: Text("My Orders"),
-                  leading: Icon(Icons.shopping_bag_rounded,color: Colors.pink,),
+              onTap: () {},
+              child: const ListTile(
+                title: Text("My Orders"),
+                leading: Icon(
+                  Icons.shopping_bag_rounded,
+                  color: Colors.pink,
                 ),
-               ),
-               InkWell(
-                onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const Cart()));
-                },
-                child:const ListTile(
-                  title: Text("Shopping Cart"),
-                  leading: Icon(Icons.shopping_cart,color: Colors.red,),
+              ),
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Cart()));
+              },
+              child: const ListTile(
+                title: Text("Shopping Cart"),
+                leading: Icon(
+                  Icons.shopping_cart,
+                  color: Colors.red,
                 ),
-               ),
-               InkWell(
-                onTap: (){},
-                child: const ListTile(
-                  title: Text("Favourites"),
-                  leading: Icon(Icons.favorite,color: Colors.red,),
+              ),
+            ),
+            InkWell(
+              onTap: () {},
+              child: const ListTile(
+                title: Text("Favourites"),
+                leading: Icon(
+                  Icons.favorite,
+                  color: Colors.red,
                 ),
-               ),
-               InkWell(
-                onTap: (){},
-                child:const ListTile(
-                  title: Text("Settings"),
-                  leading: Icon(Icons.settings,color: Colors.red,),
+              ),
+            ),
+            InkWell(
+              onTap: () {},
+              child: const ListTile(
+                title: Text("Settings"),
+                leading: Icon(
+                  Icons.settings,
+                  color: Colors.red,
                 ),
-               ),
-               
-               
+              ),
+            ),
             InkWell(
               onTap: () {},
               child: const ListTile(
@@ -151,23 +172,27 @@ class _HomePageState extends State<HomePage> {
       body: ListView(
         children: <Widget>[
           _buildImageCarousel(),
-          const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Text('Categories'),
+
+          Container(
+            alignment: Alignment.centerLeft,
+            child: const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text('Categories'),
+            ),
           ),
           // Horizontal list view begins here
           const HorizontalList(),
 
-          const Padding(
-            padding: EdgeInsets.all(25.0),
-            child: Text('Recent Products'),
+          Container(
+            alignment: Alignment.centerLeft,
+            child: const Padding(
+              padding: EdgeInsets.all(25.0),
+              child: Text('Recent Products'),
+            ),
           ),
 
           //grid view
-          const SizedBox(
-            height: 320.0,
-            child: Products(),
-          )
+          const Flexible(child: Products()),
         ],
       ),
     );
